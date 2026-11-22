@@ -1,0 +1,112 @@
+/* ===== Phishing Awareness Trainer — one stylesheet for all pages ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background: #f1f3f6;
+  color: #1b2a41;
+  line-height: 1.5;
+}
+h1, h2, h3, h4 { margin: 0 0 10px; }
+button, input, select, textarea { font: inherit; }
+a { color: #0b5cad; }
+
+/* ----- Top bar ----- */
+.topbar {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: #1b2a41; color: #fff; padding: 10px 20px;
+}
+.topbar .spacer { flex: 1; }
+.badge { background: #e0a100; color: #1b2a41; padding: 3px 12px; border-radius: 20px; font-weight: 600; }
+.topbar .plain { background: #324a6d; padding: 3px 12px; border-radius: 20px; }
+
+/* ----- Buttons ----- */
+button { cursor: pointer; border: 0; border-radius: 5px; padding: 8px 16px; background: #dfe3ea; color: #1b2a41; }
+button:hover { filter: brightness(0.95); }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #e0a100; outline-offset: 1px; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-red   { background: #c0392b; color: #fff; }
+.btn-green { background: #2e7d4f; color: #fff; }
+.btn-blue  { background: #0b5cad; color: #fff; }
+.btn-small { padding: 4px 10px; font-size: 0.85rem; }
+.btn-lang  { background: #fff; color: #1b2a41; }
+
+/* ----- Layout ----- */
+.page { max-width: 1100px; margin: 20px auto; padding: 0 16px; }
+.row { display: flex; gap: 15px; }
+.left-box  { width: 35%; background: #fff; border: 1px solid #ccd2dc; border-radius: 6px; max-height: 75vh; overflow-y: auto; }
+.right-box { width: 65%; background: #fff; border: 1px solid #ccd2dc; border-radius: 6px; padding: 20px; }
+.box { background: #fff; border: 1px solid #ccd2dc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+
+/* ----- Login ----- */
+.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.login-wrap .box { width: 100%; max-width: 380px; margin: 0; }
+.login-wrap input, .login-wrap select { width: 100%; margin-bottom: 12px; }
+.link-btn { background: none; padding: 0; color: #0b5cad; text-decoration: underline; }
+.demo-list { font-size: 0.85rem; color: #4a5a72; margin-top: 16px; border-top: 1px solid #e3e6ec; padding-top: 10px; }
+.demo-list code { background: #eef0f4; padding: 1px 5px; border-radius: 3px; }
+
+/* ----- Inputs ----- */
+input, select, textarea { padding: 8px; border: 1px solid #b9c0cc; border-radius: 5px; background: #fff; color: inherit; }
+label { display: block; font-weight: 600; margin: 10px 0 4px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 16px; }
+.form-grid .full { grid-column: 1 / -1; }
+.form-grid input, .form-grid select, .form-grid textarea { width: 100%; }
+
+/* ----- Inbox ----- */
+.mail-item { padding: 12px 14px; border-bottom: 1px solid #e3e6ec; cursor: pointer; }
+.mail-item:hover { background: #eef3fa; }
+.mail-item.active { background: #dce8f7; }
+.mail-item.done { opacity: 0.45; cursor: default; }
+.mail-item .sender { font-size: 0.8rem; color: #4a5a72; }
+.mail-item .subject { font-weight: 600; }
+.mail-meta { color: #4a5a72; }
+.mail-body { background: #f7f8fa; border: 1px solid #e3e6ec; border-radius: 5px; padding: 14px; margin: 14px 0; min-height: 90px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.feedback { margin-top: 20px; padding: 16px; border-radius: 6px; border: 1px solid #ccd2dc; background: #fafbfc; }
+.feedback.ok  { border-inline-start: 6px solid #2e7d4f; }
+.feedback.bad { border-inline-start: 6px solid #c0392b; }
+.tip { margin: 10px 0; padding: 10px; background: #fff7dd; border-radius: 5px; }
+.note { color: #8a5a00; font-weight: 600; }
+
+/* ----- Tables ----- */
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: start; padding: 8px; border-bottom: 1px solid #e3e6ec; vertical-align: middle; }
+th { background: #eef0f4; }
+
+/* ----- Dashboard ----- */
+.cards { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+.card { flex: 1; min-width: 180px; background: #fff; padding: 15px; border-radius: 6px; border: 1px solid #ddd; }
+.card .big { font-size: 1.9rem; font-weight: 700; }
+.bar-row { margin-bottom: 14px; }
+.bar-label { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; font-size: 0.95rem; }
+.bar-bg { background: #e3e6ec; border-radius: 4px; height: 18px; overflow: hidden; }
+.bar-fill { height: 100%; width: 0; background: #2e7d4f; }
+.bar-fill.mid { background: #e0a100; }
+.bar-fill.low { background: #c0392b; }
+
+.hidden { display: none; }
+.msg { margin-top: 10px; font-weight: 600; }
+.msg.error { color: #c0392b; }
+.msg.good { color: #2e7d4f; }
+
+@media (max-width: 760px) {
+  .row { flex-direction: column; }
+  .left-box, .right-box { width: 100%; }
+  .left-box { max-height: 250px; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+/* ----- Recommendation tag and history results (FR-06 / FR-07) ----- */
+.tag { display: inline-block; margin-top: 4px; padding: 1px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: 600; }
+.tag-recommended { background: #e0a100; color: #1b2a41; }
+.rec-note { padding: 10px 14px; background: #fff7dd; border-bottom: 1px solid #e3e6ec; font-size: 0.9rem; font-weight: 600; }
+.res-ok { color: #2e7d4f; font-weight: 600; }
+.res-bad { color: #c0392b; font-weight: 600; }
+
+/* ----- Printing the dashboard as a report (Save as PDF) ----- */
+@media print {
+  .topbar, .actions { display: none; }
+  body { background: #fff; }
+  .bar-bg, .bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
