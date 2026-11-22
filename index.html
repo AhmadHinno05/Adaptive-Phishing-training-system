@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adaptive Phishing Training System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <div class="login-wrap">
+    <div class="box">
+
+      <!-- LOGIN -->
+      <div id="loginBox">
+        <h2 data-i18n="appTitle">Adaptive Phishing Training System</h2>
+        <label for="email" data-i18n="email">Email</label>
+        <input id="email" type="email" autocomplete="username">
+        <label for="password" data-i18n="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password">
+        <div class="actions">
+          <button class="btn-blue" onclick="login()" data-i18n="loginBtn">Log in</button>
+          <button class="btn-lang" onclick="toggleLang()">EN / العربية</button>
+        </div>
+        <p id="loginError" class="msg error hidden"></p>
+        <p><button class="link-btn" onclick="showRegister()" data-i18n="newUserLink">New user? Create an account</button></p>
+      </div>
+
+      <!-- REGISTER -->
+      <div id="registerBox" style="display:none;">
+        <h2 data-i18n="registerTitle">Create an account</h2>
+        <label for="regName" data-i18n="fullName">Full name</label>
+        <input id="regName" type="text" autocomplete="name">
+        <label for="regEmail" data-i18n="email">Email</label>
+        <input id="regEmail" type="email" autocomplete="email">
+        <label for="regPass" data-i18n="password">Password</label>
+        <input id="regPass" type="password" autocomplete="new-password">
+        <div class="actions" style="margin-top:14px;">
+          <button class="btn-blue" onclick="registerUser()" data-i18n="registerBtn">Register</button>
+          <button class="btn-lang" onclick="toggleLang()">EN / العربية</button>
+        </div>
+        <p id="regMsg" class="msg"></p>
+        <p><button class="link-btn" onclick="showLogin()" data-i18n="haveAccount">Already have an account? Log in</button></p>
+      </div>
+
+    </div>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+</body>
+</html>

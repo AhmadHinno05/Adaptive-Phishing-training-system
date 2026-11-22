@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inbox — Adaptive Phishing Training System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="inbox">
+  <div class="topbar">
+    <strong data-i18n="appTitle">Adaptive Phishing Training System</strong>
+    <span class="spacer"></span>
+    <span id="levelBadge" class="badge">Level: Easy</span>
+    <span id="scoreText" class="plain">Score: 0</span>
+    <button onclick="toggleHistory()" data-i18n="myHistory">My History</button>
+    <button class="btn-lang" onclick="toggleLang()">EN / العربية</button>
+    <button onclick="logout()" data-i18n="logout">Logout</button>
+  </div>
+
+  <div class="page">
+    <div class="row">
+      <div id="emailList" class="left-box"></div>
+
+      <div class="right-box">
+        <h3 id="mailSubject"></h3>
+        <p id="mailSender" class="mail-meta"></p>
+        <div id="mailBody" class="mail-body"></div>
+
+        <div class="actions">
+          <button id="btnPhish" class="btn-red" onclick="checkAnswer(true)" data-i18n="flagPhish">Flag as Phishing</button>
+          <button id="btnLegit" class="btn-green" onclick="checkAnswer(false)" data-i18n="flagLegit">Flag as Legitimate</button>
+        </div>
+
+        <div id="feedbackBox" class="feedback" style="display:none;">
+          <h4 id="resultTitle"></h4>
+          <p id="resultReason"></p>
+          <p id="levelNote" class="note"></p>
+          <div class="actions">
+            <button onclick="showTip('sender')" data-i18n="askSender">Why look at the sender?</button>
+            <button onclick="showTip('link')" data-i18n="askLink">What about links?</button>
+          </div>
+          <p id="tipText" class="tip" style="display:none;"></p>
+          <button class="btn-blue" onclick="nextEmail()" data-i18n="nextEmail">Next Email</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MY HISTORY (FR-07) -->
+    <div id="historyBox" class="box hidden" style="margin-top:20px;">
+      <h3 data-i18n="myHistory">My History</h3>
+      <div class="cards">
+        <div class="card"><div data-i18n="totalAttempts">Total attempts</div><div id="histAttempts" class="big">0</div></div>
+        <div class="card"><div data-i18n="correctRate">Correct rate</div><div id="histRate" class="big">0%</div></div>
+        <div class="card"><div data-i18n="avgTimeFull">Average time</div><div id="histAvg" class="big">—</div></div>
+        <div class="card"><div data-i18n="level">Level</div><div id="histLevel" class="big">—</div></div>
+      </div>
+      <p id="historyEmpty" style="display:none;" data-i18n="historyEmpty">No results yet.</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="colWhen">Date</th>
+              <th data-i18n="colEmail">Email</th>
+              <th data-i18n="category">Category</th>
+              <th data-i18n="level">Level</th>
+              <th data-i18n="colResult">Result</th>
+              <th data-i18n="colTime">Time</th>
+            </tr>
+          </thead>
+          <tbody id="historyTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/inbox.js"></script>
+</body>
+</html>
